@@ -1,12 +1,24 @@
 import IMotorcycle from '../Interfaces/IMotorcycle';
-import Vehicle from './Vehicle';
+// import Vehicle from './Vehicle';
+// pq deu erro aqui? ta puxando ICar pq procurar saber <<<<<
 
-export default class Motorcycle extends Vehicle {
+export default class Motorcycle {
   private engineCapacity: number;
   private category: string;
+  protected id: string | undefined;
+  protected model: string;
+  protected status: boolean | undefined;
+  protected buyValue: number;
+  protected color: string;
+  protected year: number;
 
   constructor(motorcycle: IMotorcycle) {
-    super(motorcycle);
+    this.id = motorcycle.id;
+    this.model = motorcycle.model;
+    this.year = motorcycle.year;
+    this.color = motorcycle.color;
+    this.status = motorcycle.status || false;
+    this.buyValue = motorcycle.buyValue;
     this.engineCapacity = motorcycle.engineCapacity;
     this.category = motorcycle.category;
   }
