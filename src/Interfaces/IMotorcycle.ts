@@ -1,5 +1,5 @@
 // adiantando o 5
-import IVehicle from './ICar';
+import IVehicle from './IVehicle';
 
 interface IMotorcycle extends IVehicle {
   category: string;

@@ -23,7 +23,7 @@ abstract class AbstractODM<T> {
   }
   
   public async update(id: string, obj: Partial<T>): Promise<T | null> {
-    if (!isValidObjectId(id)) throw Error('Invalid Mongo id');
+    if (!isValidObjectId(id)) throw new Error('Invalid Mongo id');
     return this.model.findByIdAndUpdate(id, obj as UpdateQuery<T>, { new: true });
   }
   public async findAll(): Promise<T[] | []> {
